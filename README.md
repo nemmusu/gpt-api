@@ -11,6 +11,24 @@ Questo progetto fornisce uno script Python per interfacciarsi con il modello di 
 
 ## Installazione
 
+Prima di tutto, dovrai scaricare il progetto dal repository GitHub. Apri il terminale e posizionati nella cartella in cui desideri scaricare il progetto. Puoi farlo utilizzando il comando `cd`, seguito dal percorso della cartella. Ad esempio:
+
+```shell
+cd /percorso/alla/cartella
+```
+
+Successivamente, clona il repository utilizzando il comando `git clone`, seguito dall'URL del repository:
+
+```shell
+git clone https://github.com/nemmusu/gpt-api.git
+```
+
+Ora dovresti avere una copia del progetto nella tua cartella locale. Per accedere alla cartella del progetto, usa ancora il comando `cd`:
+
+```shell
+cd gpt-api
+```
+
 Per installare la libreria `openai` necessaria per questo progetto, eseguire il seguente comando:
 
 ```shell
@@ -59,6 +77,12 @@ I parametri disponibili sono:
 - `--temperature`: La temperatura per il modello GPT.
 - `--model`: Il modello GPT da utilizzare.
 - `--system_role_message`: Il messaggio del ruolo di sistema per il modello GPT.
+
+Per visualizzare l'help del comando, eseguire:
+
+```shell
+python gpt.py --help
+```
 
 ## Interfaccia GUI
 
