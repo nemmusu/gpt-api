@@ -68,7 +68,7 @@ print(risposta)
 ```python
 from gpt import GPT
 
-chatbot = GPT(api_key='your_api_key', domanda='Qual è il significato della vita?', 
+chatbot = GPT(config_file='/etc/gpt-api/config.ini', api_key='your_api_key', domanda='Qual è il significato della vita?', 
               temperature=0.5, model='gpt-4', 
               system_role_message='Questo è un esempio di sistema di messaggi')
 risposta = chatbot.get_chat_response()
