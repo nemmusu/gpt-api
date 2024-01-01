@@ -6,7 +6,7 @@ Questo progetto fornisce uno script Python per interfacciarsi con il modello di 
 
 - [Installazione](#installazione)
 - [Utilizzo](#utilizzo)
-- [Interfaccia GUI](#interfaccia-gui)
+- [Interfaccia GUI](#interfaccia)
 - [Creazione dell'eseguibile](#creazione-delleseguibile)
 
 ## Installazione
@@ -107,9 +107,9 @@ Per visualizzare l'help del comando, eseguire:
 python gpt.py --help
 ```
 
-## Interfaccia GUI
+## Interfaccia
 
-L'interfaccia GUI, implementata in `gui.pyw`, utilizza PyQt5. Per installare PyQt5, eseguire il comando:
+L'interfaccia implementata in `gui.pyw`, utilizza PyQt5. Per installare PyQt5, eseguire il comando:
 
 ```shell
 pip install pyqt5
