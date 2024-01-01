@@ -1,125 +1,125 @@
 # GPT Chat Bot
-Questo progetto fornisce uno script Python per interfacciarsi con il modello di linguaggio GPT di OpenAI e una GUI per utilizzarlo.
+This project provides a Python script to interface with OpenAI's GPT language model and a GUI to use it.
 
-## Indice
-1. [Installazione](#installazione)
-2. [Utilizzo](#utilizzo)
-   - [File di configurazione](#file-di-configurazione)
-   - [Utilizzo della Classe GPT](#utilizzo-della-classe-gpt)
-   - [Script gpt.py](#script-gptpy)
-3. [Interfaccia](#interfaccia)
-4. [Creazione dell'eseguibile](#creazione-delleseguibile)
+## Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+   - [Configuration File](#configuration-file)
+   - [Using the GPT Class](#using-the-gpt-class)
+   - [gpt.py Script](#gptpy-script)
+3. [Interface](#interface)
+4. [Creating the Executable](#creating-the-executable)
    - [PyInstaller](#pyinstaller)
    - [cx_Freeze](#cxfreeze)
 
-## Installazione <a name="installazione"></a>
-Per installare il progetto, segui i seguenti passaggi:
+## Installation <a name="installation"></a>
+To install the project, follow these steps:
 
-1. Scarica il progetto dal repository GitHub. Apri il terminale e posizionati nella cartella in cui desideri scaricare il progetto. Puoi farlo utilizzando il comando `cd`, seguito dal percorso della cartella.
+1. Download the project from the GitHub repository. Open the terminal and go to the folder where you want to download the project. You can do this using the `cd` command, followed by the path of the folder.
     ```shell
-    cd /percorso/alla/cartella
+    cd /path/to/folder
     ```
-2. Clona il repository utilizzando il comando `git clone`, seguito dall'URL del repository:
+2. Clone the repository using the `git clone` command, followed by the URL of the repository:
     ```shell
     git clone https://github.com/nemmusu/gpt-api.git
     ```
-3. Accedi alla cartella del progetto:
+3. Access the project folder:
     ```shell
     cd gpt-api
     ```
-4. Installa la libreria `openai` necessaria per questo progetto:
+4. Install the `openai` library needed for this project:
     ```shell
     pip install openai
     ```
 
-## Utilizzo <a name="utilizzo"></a>
+## Usage <a name="usage"></a>
 
-### File di configurazione <a name="file-di-configurazione"></a>
-Il file `config.ini` viene utilizzato per configurare vari aspetti del chat bot. Ecco un esempio di come potrebbe essere configurato:
+### Configuration File <a name="configuration-file"></a>
+The `config.ini` file is used to configure various aspects of the chat bot. Here's an example of how it might be set up:
 
 ```ini
 [OPENAI]
-api_key = tua_api_key
-domanda = Cosa consigli di fare oggi?
+api_key = your_api_key
+question = What do you suggest doing today?
 temperature = 0.7
 model = gpt-3.5-turbo
-system_role_message = Siamo qui per aiutarti a rispondere alle tue domande.
+system_role_message = We are here to help you answer your questions.
 ```
 
-### Utilizzo della Classe GPT <a name="utilizzo-della-classe-gpt"></a>
-Per utilizzare la classe GPT, creiamo un'istanza di GPT e chiamiamo il metodo `get_chat_response()`. Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
+### Using the GPT Class <a name="using-the-gpt-class"></a>
+To use the GPT class, we create an instance of GPT and call the `get_chat_response()` method. All parameters are optional and, if not specified, will be taken from the configuration file.
 
-Ecco un esempio d'uso senza parametri:
+Here's an example of use without parameters:
 ```python
 from gpt import GPT
 
-chatbot = GPT() # Utilizza i valori predefiniti del file di configurazione
-risposta = chatbot.get_chat_response()
-print(risposta)
+chatbot = GPT() # Uses the default values from the configuration file
+response = chatbot.get_chat_response()
+print(response)
 ```
 
-E un esempio d'uso con parametri:
+And an example of use with parameters:
 ```python
 from gpt import GPT
 
-chatbot = GPT(config_file='/etc/gpt-api/config.ini', api_key='your_api_key', domanda='Qual è il significato della vita?', 
+chatbot = GPT(config_file='/etc/gpt-api/config.ini', api_key='your_api_key', question='What is the meaning of life?', 
               temperature=0.5, model='gpt-4', 
-              system_role_message='sei un assistente esperto e risponderai alle mie domande scrivendo in maniera specifica e dettagliata esclusivamente in formato markdown')
-risposta = chatbot.get_chat_response()
-print(risposta)
+              system_role_message='you are an expert assistant and will answer my questions in a specific and detailed manner exclusively in markdown format')
+response = chatbot.get_chat_response()
+print(response)
 ```
 
-I parametri che puoi utilizzare sono i seguenti:
+The parameters you can use are as follows:
 
-- `config_file`: Il percorso del file di configurazione (default: `config.ini`)
-- `api_key`: La chiave API di OpenAI
-- `domanda`: La domanda da passare al modello GPT
-- `temperature`: La temperatura per il modello GPT
-- `model`: Il modello GPT da utilizzare
-- `system_role_message`: Il messaggio del ruolo di sistema per il modello GPT
+- `config_file`: The path of the configuration file (default: `config.ini`)
+- `api_key`: The API key for OpenAI
+- `question`: The question to pass to the GPT model
+- `temperature`: The temperature for the GPT model
+- `model`: The GPT model to use
+- `system_role_message`: The system role message for the GPT model
 
-### Script gpt.py <a name="script-gptpy"></a>
-Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
+### gpt.py Script <a name="gptpy-script"></a>
+The `gpt.py` script can be run on its own or imported as a module. All parameters are optional and, if not specified, will be taken from the configuration file.
 
-Puoi eseguirlo utilizzando il seguente comando:
+You can run it using the following command:
 ```shell
-python gpt.py --domanda "Cosa consigli di fare oggi?" --temperature 0.7 --model gpt-3.5-turbo
+python gpt.py --question "What do you suggest doing today?" --temperature 0.7 --model gpt-3.5-turbo
 ```
-I parametri disponibili sono:
+The available parameters are:
 
-- `--config`: Percorso del file di configurazione (default: `config.ini`).
-- `--api_key`: La chiave API per OpenAI.
-- `--domanda`: La domanda da passare al modello GPT.
-- `--temperature`: La temperatura per il modello GPT.
-- `--model`: Il modello GPT da utilizzare.
-- `--system_role_message`: Il messaggio del ruolo di sistema per il modello GPT.
+- `--config`: Path of the configuration file (default: `config.ini`).
+- `--api_key`: The API key for OpenAI.
+- `--question`: The question to pass to the GPT model.
+- `--temperature`: The temperature for the GPT model.
+- `--model`: The GPT model to use.
+- `--system_role_message`: The system role message for the GPT model.
 
-Per visualizzare l'help del comando, eseguire:
+To view the command's help, run:
 ```shell
 python gpt.py --help
 ```
 
-## Interfaccia <a name="interfaccia"></a>
-L'interfaccia implementata in `gui.pyw` utilizza PyQt5. Per installare PyQt5, eseguire il comando:
+## Interface <a name="interface"></a>
+The interface implemented in `gui.pyw` uses PyQt5. To install PyQt5, run the command:
 ```shell
 pip install pyqt5
 ```
-Per eseguire l'interfaccia GUI, eseguire il comando:
+To run the GUI interface, run the command:
 ```shell
 python gui.pyw
 ```
 
-## Creazione dell'eseguibile <a name="creazione-delleseguibile"></a>
+## Creating the Executable <a name="creating-the-executable"></a>
 
 ### PyInstaller <a name="pyinstaller"></a>
-Per creare un eseguibile con PyInstaller, utilizzare il seguente comando:
+To create an executable with PyInstaller, use the following command:
 ```shell
 pyinstaller --onefile --name "GUI_ChatGPT" gui.pyw --hidden-import=gpt --hidden-import=argparse --hidden-import=configparser --hidden-import=openai --hidden-import=PyQt5.QtCore --hidden-import=PyQt5.QtWidgets
 ```
 
 ### cx_Freeze <a name="cxfreeze"></a>
-Per creare un eseguibile con cx_Freeze, è necessario avere il file `compile_cx_freeze.py` nella stessa directory e poi eseguire il comando:
+To create an executable with cx_Freeze, you need to have the `compile_cx_freeze.py` file in the same directory and then run the command:
 ```shell
 python compile_cx_freeze.py build
 ```
-Il comando creerà un pacchetto strutturato con cartelle contenenti l'eseguibile e le librerie necessarie.
+The command will create a structured package with folders containing the executable and necessary libraries.
