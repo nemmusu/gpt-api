@@ -26,10 +26,10 @@ Il file `config.ini` viene utilizzato per configurare vari aspetti del chat bot.
 ```ini
 [OPENAI]
 api_key = tua_api_key
-domanda = "Cosa consigli di fare oggi?"
+domanda = Cosa consigli di fare oggi?
 temperature = 0.7
-model = "gpt-3.5-turbo"
-system_role_message = "Siamo qui per aiutarti a rispondere alle tue domande."
+model = gpt-3.5-turbo
+system_role_message = Siamo qui per aiutarti a rispondere alle tue domande.
 ```
 
 ### Utilizzo della Classe GPT
