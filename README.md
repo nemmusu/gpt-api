@@ -63,7 +63,7 @@ print(risposta)
 
 ### Script gpt.py
 
-Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Per eseguirlo, utilizzare il seguente comando:
+Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione. Per eseguirlo, utilizzare il seguente comando:
 
 ```shell
 python gpt.py --domanda "Cosa consigli di fare oggi?" --temperature 0.7 --model gpt-3.5-turbo
