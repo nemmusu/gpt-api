@@ -6,7 +6,7 @@ Questo progetto fornisce uno script Python per interfacciarsi con il modello di 
 
 - [Installazione](#installazione)
 - [Utilizzo](#utilizzo)
-- [Interfaccia GUI](#interfaccia)
+- [Interfaccia](#interfaccia)
 - [Creazione dell'eseguibile](#creazione-delleseguibile)
 
 ## Installazione
