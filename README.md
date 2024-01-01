@@ -1,7 +1,7 @@
 # Readme
-[README in italiano](./README_IT.md)
+[README: Italiano](./README_IT.md)
 
-[English README](./README.md)
+[README: English](./README.md)
 
 # GPT Chat Bot
 This project provides a Python script to interface with OpenAI's GPT language model and a GUI to use it.
