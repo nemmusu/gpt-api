@@ -138,9 +138,7 @@ To create an executable using cx_Freeze, you need to install cx_Freeze on your s
 pip install cx_Freeze
 ```
 
-Once cx_Freeze is installed, you need to have a file named "compile_cx_freeze.py" in the same directory as your source code. This file will contain the code needed to create the executable using cx_Freeze.
-
-After creating the "compile_cx_freeze.py" file, you can create the executable using the following command:
+Once cx_Freeze is installed, you can create the executable using the following command:
 
 ```
 python compile_cx_freeze.py build

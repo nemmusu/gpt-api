@@ -138,9 +138,7 @@ Per creare un eseguibile utilizzando cx_Freeze, è necessario installare cx_Free
 pip install cx_Freeze
 ```
 
-Una volta installato cx_Freeze, è necessario avere un file chiamato "compile_cx_freeze.py" nella stessa directory del codice sorgente. Questo file conterrà il codice necessario per creare l'eseguibile utilizzando cx_Freeze.
-
-Dopo aver creato il file "compile_cx_freeze.py", è possibile creare l'eseguibile utilizzando il seguente comando:
+Una volta installato cx_Freeze, è possibile creare l'eseguibile utilizzando il seguente comando:
 
 ```
 python compile_cx_freeze.py build
