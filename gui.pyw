@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QTextEdit, QProgressBar, QHBoxLayout, QPlainTextEdit
 from PyQt5.QtCore import QThread, pyqtSignal
 import configparser
-from gpt import GPT  # Assicurati di importare correttamente la classe GPT dal tuo modulo
+from gpt import GPT  
 
 class GPTWorker(QThread):
     finished = pyqtSignal(str)
@@ -64,7 +64,7 @@ class GPTInterface(QWidget):
         self.risposta_display = QTextEdit()
         self.risposta_display.setReadOnly(True)
 
-        self.progress_bar = QProgressBar()  # Aggiunto QProgressBar
+        self.progress_bar = QProgressBar()  
         self.progress_bar.setVisible(False)
 
         hbox = QHBoxLayout()  # Nuovo layout orizzontale

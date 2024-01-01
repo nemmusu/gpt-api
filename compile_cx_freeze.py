@@ -13,5 +13,3 @@ setup(
     options={"build_exe": build_exe_options},
     executables=[Executable("gui.pyw", base="Win32GUI")],
 )
-
-#compile_cx_freeze.py build (pacchetto strutturato con cartelle)
