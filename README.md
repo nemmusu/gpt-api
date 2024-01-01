@@ -54,12 +54,35 @@ system_role_message = Siamo qui per aiutarti a rispondere alle tue domande.
 
 Per utilizzare la classe GPT, creiamo un'istanza di GPT e chiamiamo il metodo get_chat_response(). Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
 
+### Esempio d'uso senza parametri
 ```python
 from gpt import GPT
-chatbot = GPT()
+
+chatbot = GPT() # Utilizza i valori predefiniti del file di configurazione
 risposta = chatbot.get_chat_response()
 print(risposta)
 ```
+
+### Esempio d'uso con parametri
+
+```python
+from gpt import GPT
+
+chatbot = GPT(api_key='your_api_key', domanda='Qual è il significato della vita?', 
+              temperature=0.5, model='gpt-4', 
+              system_role_message='Questo è un esempio di sistema di messaggi')
+risposta = chatbot.get_chat_response()
+print(risposta)
+```
+
+## Parametri
+
+- `config_file`: Il percorso del file di configurazione (default: `config.ini`)
+- `api_key`: La chiave API di OpenAI
+- `domanda`: La domanda da passare al modello GPT
+- `temperature`: La temperatura per il modello GPT
+- `model`: Il modello GPT da utilizzare
+- `system_role_message`: Il messaggio del ruolo di sistema per il modello GPT
 
 ### Script gpt.py
 
@@ -69,7 +92,7 @@ Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Tutti i
 python gpt.py --domanda "Cosa consigli di fare oggi?" --temperature 0.7 --model gpt-3.5-turbo
 ```
 
-I parametri disponibili sono:
+## I parametri disponibili sono:
 
 - `--config`: Percorso del file di configurazione (default: `config.ini`).
 - `--api_key`: La chiave API per OpenAI.
