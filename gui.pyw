@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QTextEdit, QProgressBar, QHBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QTextEdit, QProgressBar, QHBoxLayout, QPlainTextEdit
 from PyQt5.QtCore import QThread, pyqtSignal
 import configparser
 from gpt import GPT  # Assicurati di importare correttamente la classe GPT dal tuo modulo
@@ -41,8 +41,12 @@ class GPTInterface(QWidget):
         self.api_key_label = QLabel('Chiave API di OpenAI:')
         self.api_key_input = QLineEdit(self.config['OPENAI'].get('api_key', ''))
         self.api_key_input.setEchoMode(QLineEdit.Password)
+
         self.domanda_label = QLabel('Domanda:')
-        self.domanda_input = QLineEdit(self.config['OPENAI'].get('domanda', ''))
+        self.domanda_input = QPlainTextEdit(self.config['OPENAI'].get('domanda', ''))
+        self.domanda_input.setLineWrapMode(QPlainTextEdit.WidgetWidth)
+        self.domanda_input.setFixedHeight(100)
+        self.domanda_input.setPlaceholderText("Inserisci la domanda (max 5 righe)")
 
         self.temperature_label = QLabel('Temperatura per il modello GPT:')
         self.temperature_input = QLineEdit(self.config['OPENAI'].get('temperature', ''))
@@ -97,7 +101,7 @@ class GPTInterface(QWidget):
     def salvaConfig(self):
         # Scrivi le modifiche nel file config.ini
         self.config['OPENAI']['api_key'] = self.api_key_input.text()
-        self.config['OPENAI']['domanda'] = self.domanda_input.text()
+        self.config['OPENAI']['domanda'] = self.domanda_input.toPlainText()
         self.config['OPENAI']['temperature'] = self.temperature_input.text()
         self.config['OPENAI']['model'] = self.model_input.text()
         self.config['OPENAI']['system_role_message'] = self.system_role_message_input.text()
@@ -110,7 +114,7 @@ class GPTInterface(QWidget):
         self.progress_bar.setRange(0, 0)
 
         api_key = self.api_key_input.text() if self.api_key_input.text() else self.config['OPENAI'].get('api_key', '')
-        domanda = self.domanda_input.text() if self.domanda_input.text() else self.config['OPENAI'].get('domanda', '')
+        domanda = self.domanda_input.toPlainText() if self.domanda_input.toPlainText() else self.config['OPENAI'].get('domanda', '')
         temperature = float(self.temperature_input.text()) if self.temperature_input.text() else float(self.config['OPENAI'].get('temperature', ''))
         model = self.model_input.text() if self.model_input.text() else self.config['OPENAI'].get('model', '')
         system_role_message = self.system_role_message_input.text() if self.system_role_message_input.text() else self.config['OPENAI'].get('system_role_message', '')
