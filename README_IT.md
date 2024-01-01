@@ -117,14 +117,33 @@ python gui.pyw
 ## Creazione dell'eseguibile <a name="creazione-delleseguibile"></a>
 
 ### PyInstaller <a name="pyinstaller"></a>
-Per creare un eseguibile con PyInstaller, utilizzare il seguente comando:
-```shell
+Per creare un eseguibile utilizzando PyInstaller, è necessario installare PyInstaller sul proprio sistema. Per farlo, è possibile utilizzare il seguente comando:
+
+```
+pip install pyinstaller
+```
+
+Una volta installato PyInstaller, è possibile creare l'eseguibile utilizzando il seguente comando:
+
+```
 pyinstaller --onefile --name "GUI_ChatGPT" gui.pyw --hidden-import=gpt --hidden-import=argparse --hidden-import=configparser --hidden-import=openai --hidden-import=PyQt5.QtCore --hidden-import=PyQt5.QtWidgets
 ```
 
+Questo comando crea un singolo file eseguibile chiamato "GUI_ChatGPT" utilizzando il file "gui.pyw" come punto di ingresso. Vengono inoltre specificate alcune dipendenze nascoste come "gpt", "argparse", "configparser", "openai", "PyQt5.QtCore" e "PyQt5.QtWidgets" che devono essere incluse nell'eseguibile.
+
 ### cx_Freeze <a name="cxfreeze"></a>
-Per creare un eseguibile con cx_Freeze, è necessario avere il file `compile_cx_freeze.py` nella stessa directory e poi eseguire il comando:
-```shell
+Per creare un eseguibile utilizzando cx_Freeze, è necessario installare cx_Freeze sul proprio sistema. Per farlo, è possibile utilizzare il seguente comando:
+
+```
+pip install cx_Freeze
+```
+
+Una volta installato cx_Freeze, è necessario avere un file chiamato "compile_cx_freeze.py" nella stessa directory del codice sorgente. Questo file conterrà il codice necessario per creare l'eseguibile utilizzando cx_Freeze.
+
+Dopo aver creato il file "compile_cx_freeze.py", è possibile creare l'eseguibile utilizzando il seguente comando:
+
+```
 python compile_cx_freeze.py build
 ```
-Il comando creerà un pacchetto strutturato con cartelle contenenti l'eseguibile e le librerie necessarie.
+
+Questo comando creerà un pacchetto strutturato con cartelle contenenti l'eseguibile e le librerie necessarie.
