@@ -32,6 +32,17 @@ model = "gpt-3.5-turbo"
 system_role_message = "Siamo qui per aiutarti a rispondere alle tue domande."
 ```
 
+### Utilizzo della Classe GPT
+
+Per utilizzare la classe GPT, creiamo un'istanza di GPT e chiamiamo il metodo get_chat_response(). Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
+
+```python
+from gpt import GPT
+chatbot = GPT()
+risposta = chatbot.get_chat_response()
+print(risposta)
+```
+
 ### Script gpt.py
 
 Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Per eseguirlo, utilizzare il seguente comando:
