@@ -2,12 +2,20 @@
 
 Questo progetto fornisce uno script Python per interfacciarsi con il modello di linguaggio GPT di OpenAI e una GUI per utilizzarlo.
 
-## Indice
+## Indice dei Contenuti
 
-- [Installazione](#installazione)
-- [Utilizzo](#utilizzo)
-- [Interfaccia](#interfaccia)
-- [Creazione dell'eseguibile](#creazione-delleseguibile)
+1. [Installazione](#installazione)
+2. [Utilizzo](#utilizzo)
+   - [File di configurazione](#file-di-configurazione)
+   - [Utilizzo della Classe GPT](#utilizzo-della-classe-gpt)
+       - [Esempio d'uso senza parametri](#esempio-duso-senza-parametri)
+       - [Esempio d'uso con parametri](#esempio-duso-con-parametri)
+   - [Parametri](#parametri)
+   - [Script gpt.py](#script-gpt.py)
+3. [Interfaccia](#interfaccia)
+4. [Creazione dell'eseguibile](#creazione-delleseguibile)
+   - [PyInstaller](#pyinstaller)
+   - [cx_Freeze](#cx_freeze)
 
 ## Installazione
 
@@ -54,7 +62,7 @@ system_role_message = Siamo qui per aiutarti a rispondere alle tue domande.
 
 Per utilizzare la classe GPT, creiamo un'istanza di GPT e chiamiamo il metodo get_chat_response(). Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
 
-### Esempio d'uso senza parametri
+#### Esempio d'uso senza parametri
 ```python
 from gpt import GPT
 
@@ -63,7 +71,7 @@ risposta = chatbot.get_chat_response()
 print(risposta)
 ```
 
-### Esempio d'uso con parametri
+#### Esempio d'uso con parametri
 
 ```python
 from gpt import GPT
