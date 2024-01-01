@@ -48,7 +48,7 @@ api_key = tua_api_key
 domanda = Cosa consigli di fare oggi?
 temperature = 0.7
 model = gpt-3.5-turbo
-system_role_message = Siamo qui per aiutarti a rispondere alle tue domande.
+system_role_message = sei un assistente esperto e risponderai alle mie domande scrivendo in maniera specifica e dettagliata esclusivamente in formato markdown
 ```
 
 ### Utilizzo della Classe GPT <a name="utilizzo-della-classe-gpt"></a>
