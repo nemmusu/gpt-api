@@ -39,7 +39,7 @@ pip install openai
 
 ### File di configurazione
 
-Il file `config.ini` viene utilizzato per configurare vari aspetti del chat bot. Ecco un esempio:
+Il file `config.ini` viene utilizzato per configurare vari aspetti del chat bot, si consiglia di configurarlo prima di avviare gli script. Ecco un esempio:
 
 ```ini
 [OPENAI]
