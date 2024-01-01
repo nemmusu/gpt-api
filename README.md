@@ -6,7 +6,6 @@ Questo progetto fornisce uno script Python per interfacciarsi con il modello di 
 2. [Utilizzo](#utilizzo)
    - [File di configurazione](#file-di-configurazione)
    - [Utilizzo della Classe GPT](#utilizzo-della-classe-gpt)
-   - [Parametri](#parametri)
    - [Script gpt.py](#script-gptpy)
 3. [Interfaccia](#interfaccia)
 4. [Creazione dell'eseguibile](#creazione-delleseguibile)
@@ -70,7 +69,6 @@ risposta = chatbot.get_chat_response()
 print(risposta)
 ```
 
-### Parametri <a name="parametri"></a>
 I parametri che puoi utilizzare sono i seguenti:
 
 - `config_file`: Il percorso del file di configurazione (default: `config.ini`)
