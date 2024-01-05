@@ -150,4 +150,4 @@ Nella cartella `dist` è presente una versione eseguibile del programma (già co
 
 ## Screenshots <a name="screenshots"></a>
 
-![Screenshot GPT API](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-example.png)
+![Screenshot GPT API](https://gitlab.com/john00/gpt-api/-/raw/main/screenshots/interface-example.png)
