@@ -148,4 +148,4 @@ This command will create a structured package with folders containing the execut
 
 # Screenshot
 
-![Screenshot](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-example.png)
+![Screenshot](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-example.png?raw=true)
