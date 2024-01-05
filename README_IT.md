@@ -148,4 +148,4 @@ Questo comando creerà un pacchetto strutturato con cartelle contenenti l'esegui
 
 # Screenshot
 
-![Screenshot GPT API](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-screenshot.png)
+![Screenshot GPT API](https://github.com/nemmusu/gpt-api/blob/main/screenshots/screenshot.png)
