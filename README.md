@@ -4,7 +4,7 @@
 [README: English](./README.md)
 
 # GPT Chat Bot
-This project provides a Python script to interface with OpenAI's GPT language model and a GUI to use it.
+This project provides a Python script to interface with the OpenAI GPT language model and a GUI to use it.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -16,6 +16,8 @@ This project provides a Python script to interface with OpenAI's GPT language mo
 4. [Creating the Executable](#creating-the-executable)
    - [PyInstaller](#pyinstaller)
    - [cx_Freeze](#cxfreeze)
+5. [Executable](#executable)
+6. [Screenshots](#screenshots)
 
 ## Installation <a name="installation"></a>
 To install the project, follow these steps:
@@ -40,7 +42,7 @@ To install the project, follow these steps:
 ## Usage <a name="usage"></a>
 
 ### Configuration File <a name="configuration-file"></a>
-The `config.ini` file is used to configure various aspects of the chat bot. Here is an example of how it could be configured:
+The `config.ini` file is used to configure various aspects of the chat bot. Here's an example of how it could be configured:
 
 ```ini
 [OPENAI]
@@ -48,13 +50,13 @@ api_key = your_api_key
 question = What do you recommend doing today?
 temperature = 0.7
 model = gpt-3.5-turbo
-system_role_message = You are an expert assistant and will answer my questions in a specific and detailed manner using markdown format.
+system_role_message = You are an expert assistant and will answer my questions in a specific and detailed manner exclusively in markdown format.
 ```
 
 ### Using the GPT Class <a name="using-the-gpt-class"></a>
-To use the GPT class, create an instance of GPT and call the `get_chat_response()` method. All parameters are optional and if not specified, will be fetched from the configuration file.
+To use the GPT class, instantiate a GPT object and call the `get_chat_response()` method. All parameters are optional and if not specified, will be retrieved from the configuration file.
 
-Here is an example usage without parameters:
+Here's an example usage without parameters:
 ```python
 from gpt import GPT
 
@@ -69,12 +71,12 @@ from gpt import GPT
 
 chatbot = GPT(config_file='/etc/gpt-api/config.ini', api_key='your_api_key', question='What is the meaning of life?', 
               temperature=0.5, model='gpt-4', 
-              system_role_message='You are an expert assistant and will answer my questions in a specific and detailed manner using markdown format.')
+              system_role_message='You are an expert assistant and will answer my questions in a specific and detailed manner exclusively in markdown format.')
 response = chatbot.get_chat_response()
 print(response)
 ```
 
-The parameters you can use are as follows:
+The available parameters are:
 
 - `config_file`: The path to the configuration file (default: `config.ini`)
 - `api_key`: The OpenAI API key
@@ -84,7 +86,7 @@ The parameters you can use are as follows:
 - `system_role_message`: The system role message for the GPT model
 
 ### gpt.py Script <a name="gptpy-script"></a>
-The `gpt.py` script can be run standalone or imported as a module. All parameters are optional and if not specified, will be fetched from the configuration file.
+The `gpt.py` script can be run standalone or imported as a module. All parameters are optional and if not specified, will be retrieved from the configuration file.
 
 You can run it using the following command:
 ```shell
@@ -92,7 +94,7 @@ python gpt.py --question "What do you recommend doing today?" --temperature 0.7 
 ```
 The available parameters are:
 
-- `--config`: Path to the configuration file (default: `config.ini`).
+- `--config`: The path to the configuration file (default: `config.ini`).
 - `--api_key`: The API key for OpenAI.
 - `--question`: The question to pass to the GPT model.
 - `--temperature`: The temperature for the GPT model.
@@ -105,11 +107,11 @@ python gpt.py --help
 ```
 
 ## Interface <a name="interface"></a>
-The interface implemented in `gui.pyw` uses PyQt5. To install PyQt5, run the command:
+The interface implemented in `gui.pyw` uses PyQt5. To install PyQt5, run the following command:
 ```shell
 pip install pyqt5
 ```
-To run the GUI interface, use the command:
+To run the GUI interface, execute the following command:
 ```shell
 python gui.pyw
 ```
@@ -129,7 +131,7 @@ Once PyInstaller is installed, you can create the executable using the following
 pyinstaller --onefile --name "GUI_ChatGPT" gui.pyw --hidden-import=gpt --hidden-import=argparse --hidden-import=configparser --hidden-import=openai --hidden-import=PyQt5.QtCore --hidden-import=PyQt5.QtWidgets
 ```
 
-This command creates a single executable file named "GUI_ChatGPT" using "gui.pyw" as the entry point. It also specifies some hidden dependencies like "gpt", "argparse", "configparser", "openai", "PyQt5.QtCore", and "PyQt5.QtWidgets" that need to be included in the executable.
+This command creates a single executable file named "GUI_ChatGPT" using "gui.pyw" as the entry point. Hidden dependencies such as "gpt", "argparse", "configparser", "openai", "PyQt5.QtCore", and "PyQt5.QtWidgets" are also specified to be included in the executable.
 
 ### cx_Freeze <a name="cxfreeze"></a>
 To create an executable using cx_Freeze, you need to install cx_Freeze on your system. You can do this using the following command:
@@ -144,8 +146,12 @@ Once cx_Freeze is installed, you can create the executable using the following c
 python compile_cx_freeze.py build
 ```
 
-This command will create a structured package with folders containing the executable and necessary libraries.
+This command will create a structured package with folders containing the executable and the necessary libraries.
 
-# Screenshot
+## Executable <a name="executable"></a>
+
+In the `dist` folder, there is an executable version of the program (already compiled and ready to use) and the corresponding configuration file to be modified with the correct data.
+
+## Screenshots <a name="screenshots"></a>
 
 ![Screenshot GPT API](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-example.png)
