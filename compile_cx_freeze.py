@@ -4,6 +4,10 @@ from cx_Freeze import setup, Executable
 build_exe_options = {
     "packages": ["gpt", "argparse","configparser", "openai", "PyQt5.QtCore", "PyQt5.QtWidgets"],
     "include_msvcr": True,
+    "include_files": [
+        ("config.ini"),  # Includi il file di configurazione
+        # Aggiungi eventuali altri file necessari
+    ],
 }
 
 setup(
