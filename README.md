@@ -7,17 +7,21 @@
 This project provides a Python script to interface with the OpenAI GPT language model and a GUI to use it.
 
 ## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
+
+1. [Readme](#readme)
+    - [README: Italiano](./README_IT.md)
+    - [README: English](./README.md)
+2. [Installation](#installation)
+3. [Usage](#usage)
    - [Configuration File](#configuration-file)
    - [Using the GPT Class](#using-the-gpt-class)
    - [gpt.py Script](#gptpy-script)
-3. [Interface](#interface)
-4. [Creating the Executable](#creating-the-executable)
+4. [Interface](#interface)
+5. [Creating the Executable](#creating-the-executable)
    - [PyInstaller](#pyinstaller)
    - [cx_Freeze](#cxfreeze)
-5. [Executable](#executable)
-6. [Screenshots](#screenshots)
+6. [Executable](#executable)
+7. [Screenshots](#screenshots)
 
 ## Installation <a name="installation"></a>
 To install the project, follow these steps:
