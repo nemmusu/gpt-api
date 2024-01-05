@@ -145,3 +145,7 @@ python compile_cx_freeze.py build
 ```
 
 Questo comando creerà un pacchetto strutturato con cartelle contenenti l'eseguibile e le librerie necessarie.
+
+# Screenshot
+
+![Screenshot](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface_example.png)

@@ -145,3 +145,7 @@ python compile_cx_freeze.py build
 ```
 
 This command will create a structured package with folders containing the executable and necessary libraries.
+
+# Screenshot
+
+![Screenshot](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface_example.png)
