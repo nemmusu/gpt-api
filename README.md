@@ -154,4 +154,4 @@ In the `dist` folder, there is an executable version of the program (already com
 
 ## Screenshots <a name="screenshots"></a>
 
-![Screenshot GPT API](https://gitlab.com/john00/gpt-api/-/blob/main/screenshots/interface-example.png)
+![Screenshot GPT API](https://github.com/nemmusu/gpt-api/blob/main/screenshots/interface-example.png)
