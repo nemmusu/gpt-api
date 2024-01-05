@@ -2,146 +2,38 @@
 [README: Italiano](./README_IT.md)
 
 [README: English](./README.md)
+# Stronghold Crusader 2 Editor Unlocker
 
-# GPT Chat Bot
-Questo progetto fornisce uno script Python per interfacciarsi con il modello di linguaggio GPT di OpenAI e una GUI per utilizzarlo.
+Questo è un semplice programma che consente di sbloccare le mappe originali di Stronghold Crusader 2 in modo che possano essere modificate dall'editor di mappe.
 
-## Indice
-1. [Installazione](#installazione)
-2. [Utilizzo](#utilizzo)
-   - [File di configurazione](#file-di-configurazione)
-   - [Utilizzo della Classe GPT](#utilizzo-della-classe-gpt)
-   - [Script gpt.py](#script-gptpy)
-3. [Interfaccia](#interfaccia)
-4. [Creazione dell'eseguibile](#creazione-delleseguibile)
-   - [PyInstaller](#pyinstaller)
-   - [cx_Freeze](#cxfreeze)
+Il programma è stato creato utilizzando il linguaggio di programmazione Python e la libreria PyQt5 per l'interfaccia grafica.
 
-## Installazione <a name="installazione"></a>
-Per installare il progetto, segui i seguenti passaggi:
+Per utilizzare il programma, è necessario eseguire il file unlocker.exe incluso nell'archivio `stronghold_map_unlocker.zip`. Per creare questo file .exe, è stato utilizzato il comando `python compile.py build` (il file `compile.py` è presente nel repository).
 
-1. Scarica il progetto dal repository GitHub. Apri il terminale e posizionati nella cartella in cui desideri scaricare il progetto. Puoi farlo utilizzando il comando `cd`, seguito dal percorso della cartella.
-    ```shell
-    cd /percorso/alla/cartella
-    ```
-2. Clona il repository utilizzando il comando `git clone`, seguito dall'URL del repository:
-    ```shell
-    git clone https://github.com/nemmusu/gpt-api.git
-    ```
-3. Accedi alla cartella del progetto:
-    ```shell
-    cd gpt-api
-    ```
-4. Installa la libreria `openai` necessaria per questo progetto:
-    ```shell
-    pip install openai
-    ```
+Una volta avviato il programma, per sbloccare una mappa, fare clic sul pulsante "Sblocca Mappe". Verrà richiesto di selezionare il file .shmap da sbloccare. Una volta selezionato il file, verrà creato un nuovo file con estensione "-unlocked.shmap" (nella cartella in cui verrà eseguito il programma) che conterrà la mappa sbloccata.
 
-## Utilizzo <a name="utilizzo"></a>
+Una volta completata l'operazione, verrà visualizzato un messaggio di conferma.
 
-### File di configurazione <a name="file-di-configurazione"></a>
-Il file `config.ini` viene utilizzato per configurare vari aspetti del chat bot. Ecco un esempio di come potrebbe essere configurato:
+## Per utilizzare lo script installare PyQt5 utilizzando pip, puoi eseguire il seguente comando nel tuo terminale:
 
-```ini
-[OPENAI]
-api_key = tua_api_key
-domanda = Cosa consigli di fare oggi?
-temperature = 0.7
-model = gpt-3.5-turbo
-system_role_message = sei un assistente esperto e risponderai alle mie domande scrivendo in maniera specifica e dettagliata esclusivamente in formato markdown
 ```
-
-### Utilizzo della Classe GPT <a name="utilizzo-della-classe-gpt"></a>
-Per utilizzare la classe GPT, creiamo un'istanza di GPT e chiamiamo il metodo `get_chat_response()`. Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
-
-Ecco un esempio d'uso senza parametri:
-```python
-from gpt import GPT
-
-chatbot = GPT() # Utilizza i valori predefiniti del file di configurazione
-risposta = chatbot.get_chat_response()
-print(risposta)
-```
-
-E un esempio d'uso con parametri:
-```python
-from gpt import GPT
-
-chatbot = GPT(config_file='/etc/gpt-api/config.ini', api_key='your_api_key', domanda='Qual è il significato della vita?', 
-              temperature=0.5, model='gpt-4', 
-              system_role_message='sei un assistente esperto e risponderai alle mie domande scrivendo in maniera specifica e dettagliata esclusivamente in formato markdown')
-risposta = chatbot.get_chat_response()
-print(risposta)
-```
-
-I parametri che puoi utilizzare sono i seguenti:
-
-- `config_file`: Il percorso del file di configurazione (default: `config.ini`)
-- `api_key`: La chiave API di OpenAI
-- `domanda`: La domanda da passare al modello GPT
-- `temperature`: La temperatura per il modello GPT
-- `model`: Il modello GPT da utilizzare
-- `system_role_message`: Il messaggio del ruolo di sistema per il modello GPT
-
-### Script gpt.py <a name="script-gptpy"></a>
-Lo script `gpt.py` può essere eseguito da solo o importato come modulo. Tutti i parametri sono opzionali e, se non specificati, verranno prelevati dal file di configurazione.
-
-Puoi eseguirlo utilizzando il seguente comando:
-```shell
-python gpt.py --domanda "Cosa consigli di fare oggi?" --temperature 0.7 --model gpt-3.5-turbo
-```
-I parametri disponibili sono:
-
-- `--config`: Percorso del file di configurazione (default: `config.ini`).
-- `--api_key`: La chiave API per OpenAI.
-- `--domanda`: La domanda da passare al modello GPT.
-- `--temperature`: La temperatura per il modello GPT.
-- `--model`: Il modello GPT da utilizzare.
-- `--system_role_message`: Il messaggio del ruolo di sistema per il modello GPT.
-
-Per visualizzare l'help del comando, eseguire:
-```shell
-python gpt.py --help
-```
-
-## Interfaccia <a name="interfaccia"></a>
-L'interfaccia implementata in `gui.pyw` utilizza PyQt5. Per installare PyQt5, eseguire il comando:
-```shell
 pip install pyqt5
 ```
-Per eseguire l'interfaccia GUI, eseguire il comando:
-```shell
-python gui.pyw
-```
 
-## Creazione dell'eseguibile <a name="creazione-delleseguibile"></a>
+Per avviare lo script `map_unlocker.pyw`, segui questi passaggi:
 
-### PyInstaller <a name="pyinstaller"></a>
-Per creare un eseguibile utilizzando PyInstaller, è necessario installare PyInstaller sul proprio sistema. Per farlo, è possibile utilizzare il seguente comando:
+1. Assicurati di aver installato PyQt5 come descritto sopra.
 
-```
-pip install pyinstaller
-```
+2. Apri il tuo terminale e spostati nella directory in cui si trova il file `map_unlocker.pyw`.
 
-Una volta installato PyInstaller, è possibile creare l'eseguibile utilizzando il seguente comando:
+3. Esegui il comando seguente per avviare lo script:
 
 ```
-pyinstaller --onefile --name "GUI_ChatGPT" gui.pyw --hidden-import=gpt --hidden-import=argparse --hidden-import=configparser --hidden-import=openai --hidden-import=PyQt5.QtCore --hidden-import=PyQt5.QtWidgets
+python map_unlocker.pyw
 ```
 
-Questo comando crea un singolo file eseguibile chiamato "GUI_ChatGPT" utilizzando il file "gui.pyw" come punto di ingresso. Vengono inoltre specificate alcune dipendenze nascoste come "gpt", "argparse", "configparser", "openai", "PyQt5.QtCore" e "PyQt5.QtWidgets" che devono essere incluse nell'eseguibile.
+Lo script aprirà una finestra con l'interfaccia grafica del programma Stronghold Crusader 2 Editor Unlocker. Puoi quindi utilizzare il programma per sbloccare le mappe come descritto nella descrizione sopra.
 
-### cx_Freeze <a name="cxfreeze"></a>
-Per creare un eseguibile utilizzando cx_Freeze, è necessario installare cx_Freeze sul proprio sistema. Per farlo, è possibile utilizzare il seguente comando:
+# Screenshot
 
-```
-pip install cx_Freeze
-```
-
-Una volta installato cx_Freeze, è possibile creare l'eseguibile utilizzando il seguente comando:
-
-```
-python compile_cx_freeze.py build
-```
-
-Questo comando creerà un pacchetto strutturato con cartelle contenenti l'eseguibile e le librerie necessarie.
+![SC2 Map Unlocker](https://github.com/nemmusu/sc2-map-unlocker/blob/main/screenshots/interface_example.png)
